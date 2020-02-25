@@ -21,11 +21,11 @@ def main():
         dataLarge = Data("Inputs/input_group" + str(n) + ".txt")
         print("Initial score: ", dataLarge.score)
         start = perf_counter()
-        dataLarge.optimize(1)
+        dataLarge.optimize(1000)
         end = perf_counter()
         print("Final score: " + str(dataLarge.score))
         print("Calculation time: ", end - start, "\n")
-        #dataLarge.writeOutput("Outputs/output_from_141_to_" + str(n) + ".txt")
+        dataLarge.writeOutput("Outputs/output_from_141_to_" + str(n) + ".txt")
         n += 1
     
     n = 136
