@@ -18,20 +18,20 @@ def main():
             n += 1
             continue
         print("\n", "Calculating Output for group " + str(n))
-        dataLarge = Data("inputs/input_group" + str(n) + ".txt")
+        dataLarge = Data("Inputs/input_group" + str(n) + ".txt")
         print("Initial score: ", dataLarge.score)
         start = perf_counter()
         dataLarge.optimize(1)
         end = perf_counter()
         print("Final score: " + str(dataLarge.score))
         print("Calculation time: ", end - start, "\n")
-        #dataLarge.writeOutput("outputs/output_from_141_to_" + str(n) + ".txt")
+        #dataLarge.writeOutput("Outputs/output_from_141_to_" + str(n) + ".txt")
         n += 1
     
     n = 136
     for i in range(162 - 136 + 1):
-        inputData = Data("inputs/input_group" + str(n) + ".txt")
-        if inputData.verify("outputs/output_from_141_to_" + str(n) + ".txt"):
+        inputData = Data("Inputs/input_group" + str(n) + ".txt")
+        if inputData.verify("Outputs/output_from_141_to_" + str(n) + ".txt"):
             print("Output" + str(n) + ": Valid")
         else:
             print("Output" + str(n) + ": Invalid")
