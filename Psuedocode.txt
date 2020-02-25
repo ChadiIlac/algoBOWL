@@ -1,0 +1,22 @@
+Psuedocode for my hill climb algorithm
+
+First, I'll explain the data structures I used. There are Variable,
+Expression, and Data objects. Each Expression holds the two variables
+that are in it, and whether or not they are negated. Each Variable 
+has its name as an int, a bool for its value, and a list of Expressions
+it is a part of. The Data object holds a list of ints that represent Variable
+names in order. It has a list of Expression objects. It has a dictionary that
+maps the integer names of variables to variable objects, and it has a score
+integer.
+
+My initial optimization algorithm is as follows: loop through the variables 
+in order. For each variable flip its value. (True becomes false, false becomes
+true.) Loop through the expressions that that variable is a part of and see
+if the score increases. If it does keep the change, if it does not discard the
+change. Repeat until the score stops increasing. Repeat this algorithm a number
+of times and keep the best run. This will hopefully avoid local maxima and give
+us the global maxima.
+
+This works really well with small input files. I have not tested it with large
+files. I might try and make an input with the maximum n and m sometime soon
+to see how it performs.
