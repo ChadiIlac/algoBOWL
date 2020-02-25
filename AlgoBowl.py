@@ -10,18 +10,18 @@ from time import perf_counter
 
 def main():    
     
-    skip = {138, 148, 150}
+    run = {137, 139, 156}
     
     n = 136;
     for i in range(162 - 136 + 1):
-        if n in skip:
+        if n not in run:
             n += 1
             continue
         print("\n", "Calculating Output for group " + str(n))
         dataLarge = Data("Inputs/input_group" + str(n) + ".txt")
         print("Initial score: ", dataLarge.score)
         start = perf_counter()
-        dataLarge.optimize(1000)
+        dataLarge.optimize(100)
         end = perf_counter()
         print("Final score: " + str(dataLarge.score))
         print("Calculation time: ", end - start, "\n")
